@@ -2,6 +2,9 @@
  * Return an array of size *returnSize.
  * Note: The returned array must be malloced, assume caller calls free().
  */
+
+/*
+*****************Sol 1***************
 int* countBits(int num, int* returnSize) {
     int i;
     *returnSize=num+1;
@@ -18,3 +21,36 @@ int* countBits(int num, int* returnSize) {
     return p;
     
 }
+
+*/
+
+
+/*****************Sol 2***************/
+
+int* countBits(int num, int* returnSize){
+
+    num++;
+    *returnSize=num;
+    int *ret =malloc(sizeof(int)*num);
+    int i;
+    ret[0]=0;
+    for(i=1;i<num;++i){
+        ret[i]=ret[i/2]+i%2;
+    }
+    return ret;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
